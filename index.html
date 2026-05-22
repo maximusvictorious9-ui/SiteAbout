@@ -354,11 +354,219 @@
       margin: 16px 0;
     }
     @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── TITLE PAGE ── */
+    #title-page {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #0a2342 0%, #1565c0 55%, #0d3a6e 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px 20px;
+    }
+    #title-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(79,195,247,.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 80%, rgba(79,195,247,.10) 0%, transparent 50%);
+    }
+    .title-page-inner {
+      position: relative;
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+    }
+    .tp-school {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(13px, 2vw, 15px);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 10px;
+    }
+    .tp-divider {
+      width: 60px;
+      height: 2px;
+      background: rgba(79,195,247,.4);
+      margin: 18px auto;
+    }
+    .tp-project-label {
+      font-family: 'Source Serif 4', serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 14px;
+    }
+    .tp-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4.5vw, 42px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .tp-title em {
+      font-style: italic;
+      color: var(--sky);
+    }
+    .tp-divider2 {
+      width: 100px;
+      height: 1px;
+      background: rgba(255,255,255,.15);
+      margin: 28px auto;
+    }
+    .tp-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    .tp-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .tp-label {
+      font-family: 'Source Serif 4', serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,.4);
+      min-width: 80px;
+      text-align: right;
+    }
+    .tp-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #fff;
+      font-weight: 700;
+    }
+    .tp-value.accent { color: var(--sky); }
+    .tp-bottom {
+      margin-top: 40px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tp-bottom-item {
+      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      color: rgba(255,255,255,.45);
+    }
+    .tp-bottom-item strong {
+      color: rgba(255,255,255,.7);
+      font-weight: 600;
+    }
+    .tp-scroll-btn {
+      margin-top: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.1);
+      border: 1.5px solid rgba(255,255,255,.2);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all .25s;
+      letter-spacing: .5px;
+    }
+    .tp-scroll-btn:hover {
+      background: var(--sky);
+      border-color: var(--sky);
+      color: var(--navy);
+    }
+    .tp-scroll-btn svg {
+      width: 16px;
+      height: 16px;
+      transition: transform .25s;
+    }
+    .tp-scroll-btn:hover svg { transform: translateY(3px); }
+    @media (max-width: 500px) {
+      .tp-row { flex-direction: column; align-items: center; gap: 2px; }
+      .tp-label { text-align: center; min-width: unset; }
+    }
   </style>
 </head>
 <body>
  
+<!-- TITLE PAGE -->
+<section id="title-page">
+  <div class="title-page-inner">
+
+    <div class="tp-school"
+      data-ru="Школа имени Петра Румянцева"
+      data-ro="Școala cu Numele Petru Rumeanțev">
+      Школа имени Петра Румянцева
+    </div>
+
+    <div class="tp-divider"></div>
+
+    <div class="tp-project-label"
+      data-ru="Индивидуальный проект"
+      data-ro="Proiect individual">
+      Индивидуальный проект
+    </div>
+
+    <h1 class="tp-title"
+      data-ru="Влияние <em>интернета</em> на подростков"
+      data-ro="Influența <em>internetului</em> asupra adolescenților">
+      Влияние <em>интернета</em> на подростков
+    </h1>
+
+    <div class="tp-divider2"></div>
+
+    <div class="tp-meta">
+      <div class="tp-row">
+        <span class="tp-label"
+          data-ru="Автор"
+          data-ro="Autor">Автор</span>
+        <span class="tp-value accent">Шевченко Максим</span>
+      </div>
+      <div class="tp-row">
+        <span class="tp-label"
+          data-ru="Класс"
+          data-ro="Clasa">Класс</span>
+        <span class="tp-value">11Б</span>
+      </div>
+      <div class="tp-row">
+        <span class="tp-label"
+          data-ru="Город"
+          data-ro="Orașul">Город</span>
+        <span class="tp-value">Кагул</span>
+      </div>
+      <div class="tp-row">
+        <span class="tp-label"
+          data-ru="Год"
+          data-ro="Anul">Год</span>
+        <span class="tp-value">2026</span>
+      </div>
+    </div>
+
+    <a class="tp-scroll-btn" href="#main-content"
+      data-ru="Перейти к проекту"
+      data-ro="Mergi la proiect">
+      Перейти к проекту
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+
+  </div>
+</section>
+
 <!-- HEADER -->
+<div id="main-content"></div>
 <header>
   <div class="header-inner">
     <div class="header-label" data-ru="Индивидуальный проект · 11 класс · 2025" data-ro="Proiect individual · Clasa a XI-a · 2025">
