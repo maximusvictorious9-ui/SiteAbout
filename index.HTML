@@ -1,366 +1,871 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Влияние интернета на подростков</title>
-    <style>
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: #fdfdfd;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #a0c4ff;
-            color: #003566;
-            padding: 30px;
-            text-align: center;
-            border-bottom: 4px solid #90e0ef;
-        }
-
-        header .lang-buttons {
-            margin-top: 10px;
-        }
-
-        .lang-buttons button {
-            background-color: #90e0ef;
-            color: #003566;
-            border: none;
-            padding: 5px 10px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .lang-buttons button:hover {
-            background-color: #caf0f8;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            max-width: 1400px;
-            margin: auto;
-            padding: 20px;
-            gap: 20px;
-        }
-
-        .content {
-            flex: 1;
-            max-width: 900px;
-        }
-
-        aside {
-            width: 250px;
-            padding: 15px;
-            background-color: #e3f2fd;
-            border-radius: 10px;
-            flex-shrink: 0;
-        }
-
-        section {
-            padding: 20px;
-            background-color: #fff9f9;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(160, 196, 255, 0.2);
-        }
-
-        h2 {
-            color: #0077b6;
-            border-bottom: 2px solid #90e0ef;
-            padding-bottom: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        table th, table td {
-            border: 1px solid #c0c0c0;
-            padding: 10px;
-            text-align: center;
-        }
-
-        table th {
-            background-color: #caf0f8;
-        }
-
-        .note {
-            background-color: #e0f7fa;
-            padding: 15px;
-            border-left: 4px solid #00b4d8;
-            margin-top: 15px;
-            border-radius: 5px;
-        }
-
-        .images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .images img {
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #a0c4ff;
-            color: #003566;
-            font-size: 14px;
-            border-top: 4px solid #90e0ef;
-        }
-
-        a {
-            color: #0077b6;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        aside h3 {
-            margin-top: 0;
-            color: #0077b6;
-        }
-
-        aside p {
-            margin-bottom: 15px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Влияние интернета на подростков</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a2342;
+      --blue: #1565c0;
+      --sky: #4fc3f7;
+      --ice: #e8f4fd;
+      --white: #fafcff;
+      --text: #1a2a3a;
+      --muted: #5a7a9a;
+      --accent: #ff6b35;
+      --green: #2e7d32;
+      --warn: #e65100;
+    }
+ 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.75;
+    }
+ 
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      color: #fff;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(79,195,247,.18) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(21,101,192,.3) 0%, transparent 55%);
+    }
+    .header-inner {
+      position: relative;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 30px 50px;
+    }
+    .header-label {
+      font-family: 'Source Serif 4', serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 750px;
+      margin-bottom: 18px;
+    }
+    header h1 em {
+      font-style: italic;
+      color: var(--sky);
+    }
+    header p.subtitle {
+      font-size: 15px;
+      color: rgba(255,255,255,.65);
+      max-width: 550px;
+      margin-bottom: 28px;
+    }
+    .lang-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .lang-btns button {
+      background: rgba(255,255,255,.1);
+      border: 1.5px solid rgba(255,255,255,.25);
+      color: #fff;
+      padding: 7px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      transition: all .2s;
+    }
+    .lang-btns button:hover, .lang-btns button.active {
+      background: var(--sky);
+      border-color: var(--sky);
+      color: var(--navy);
+    }
+ 
+    /* ── NAV ── */
+    nav {
+      background: #fff;
+      border-bottom: 2px solid var(--ice);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(10,35,66,.08);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+      overflow-x: auto;
+      gap: 0;
+    }
+    nav ul::-webkit-scrollbar { height: 0; }
+    nav a {
+      display: block;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all .2s;
+    }
+    nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+ 
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px 80px;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .page { grid-template-columns: 1fr; }
+      .sidebar { order: -1; }
+    }
+ 
+    /* ── SECTIONS ── */
+    section {
+      margin-bottom: 48px;
+      scroll-margin-top: 70px;
+    }
+    .section-num {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sky);
+      font-family: 'Source Serif 4', serif;
+      margin-bottom: 6px;
+    }
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 30px);
+      color: var(--navy);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--ice);
+    }
+    section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--blue);
+      margin: 28px 0 12px;
+    }
+    section p { margin-bottom: 14px; font-size: 15.5px; }
+ 
+    /* ── CARDS ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .card {
+      border-radius: 10px;
+      padding: 20px;
+      border-left: 4px solid var(--blue);
+      background: var(--ice);
+    }
+    .card.green { border-color: var(--green); background: #f1f8f1; }
+    .card.warn  { border-color: var(--warn);  background: #fff3ee; }
+    .card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+    .card p { font-size: 14px; margin: 0; color: #444; }
+ 
+    /* ── TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 14.5px;
+    }
+    thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 11px 14px;
+      text-align: left;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+    }
+    tbody tr:nth-child(even) td { background: var(--ice); }
+    tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #dde8f5;
+    }
+    .pct {
+      font-weight: 700;
+      color: var(--blue);
+      font-size: 16px;
+    }
+    .bar-wrap { display: flex; align-items: center; gap: 10px; }
+    .bar {
+      height: 8px;
+      border-radius: 4px;
+      background: var(--blue);
+      transition: width .6s ease;
+    }
+ 
+    /* ── NOTE BOX ── */
+    .note {
+      background: #fff8e6;
+      border-left: 4px solid #f59e0b;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      margin: 16px 0;
+      color: #7c4f00;
+    }
+    .note-blue {
+      background: var(--ice);
+      border-left: 4px solid var(--sky);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      margin: 16px 0;
+    }
+ 
+    /* ── OPINION BOX ── */
+    .opinion {
+      background: linear-gradient(135deg, var(--navy) 0%, #1565c0 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 30px;
+      margin: 24px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .opinion::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 120px;
+      color: rgba(255,255,255,.08);
+      position: absolute;
+      top: -20px;
+      left: 16px;
+      line-height: 1;
+    }
+    .opinion p { position: relative; font-size: 15.5px; line-height: 1.8; }
+    .opinion .author {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--sky);
+      font-style: italic;
+    }
+ 
+    /* ── VIDEO ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .video-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(10,35,66,.12);
+      background: #000;
+    }
+    .video-wrap video {
+      width: 100%;
+      display: block;
+    }
+    .video-label {
+      background: var(--navy);
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+ 
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .side-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1.5px solid var(--ice);
+      box-shadow: 0 2px 10px rgba(10,35,66,.06);
+    }
+    .side-card h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      font-size: 15px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ice);
+    }
+    .side-card p { font-size: 13.5px; color: #444; margin-bottom: 10px; }
+    .side-card p:last-child { margin-bottom: 0; }
+    .stat-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: var(--blue);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); }
+ 
+    /* ── SOURCES ── */
+    .sources-list { list-style: none; padding: 0; }
+    .sources-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--ice);
+      font-size: 14px;
+    }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list a { color: var(--blue); }
+    .sources-list a:hover { text-decoration: underline; }
+ 
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+    footer span { color: var(--sky); }
+ 
+    /* ── UTIL ── */
+    strong { color: var(--navy); }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-
+ 
+<!-- HEADER -->
 <header>
-    <h1 data-ru="Влияние интернет-информационного поля на подростков" 
-        data-ro="Influența mediului informațional online asupra adolescenților">
-        Влияние интернет-информационного поля на подростков стран
+  <div class="header-inner">
+    <div class="header-label" data-ru="Индивидуальный проект · 11 класс · 2025" data-ro="Proiect individual · Clasa a XI-a · 2025">
+      Индивидуальный проект · 11 класс · 2025
+    </div>
+    <h1 data-ru="Влияние <em>интернет-информационного поля</em> на подростков" data-ro="Influența <em>mediului informațional online</em> asupra adolescenților">
+      Влияние <em>интернет-информационного поля</em> на подростков
     </h1>
-    <p data-ru="Возможности развития и риски для психоэмоционального состояния (2020–2025)" 
-       data-ro="Oportunități de dezvoltare și riscuri pentru starea psiho-emoțională (2020–2025)">
-        Возможности развития и риски для психоэмоционального состояния (2020–2025)
+    <p class="subtitle" data-ru="Возможности развития и риски для психоэмоционального состояния (2020–2025)" data-ro="Oportunități de dezvoltare și riscuri pentru starea psiho-emoțională (2020–2025)">
+      Возможности развития и риски для психоэмоционального состояния (2020–2025)
     </p>
-    <div class="lang-buttons">
-        <button onclick="setLang('ru')">Русский</button>
-        <button onclick="setLang('ro')">Română</button>
+    <div class="lang-btns">
+      <button onclick="setLang('ru')" class="active" id="btn-ru">🇷🇺 Русский</button>
+      <button onclick="setLang('ro')" id="btn-ro">🇷🇴 Română</button>
     </div>
+  </div>
 </header>
-
-<div class="container">
-    <aside>
-        <h3 data-ru="Совет дня" data-ro="Sfaturi de zi">Совет дня</h3>
-        <p data-ru="Старайся проводить не более 2 часов в социальных сетях в день." 
-           data-ro="Încercați să nu petreceți mai mult de 2 ore pe rețelele sociale pe zi.">
-            Старайся проводить не более 2 часов в социальных сетях в день.
+ 
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#intro" data-ru="Введение" data-ro="Introducere">Введение</a></li>
+    <li><a href="#theory" data-ru="Теория" data-ro="Teorie">Теория</a></li>
+    <li><a href="#positive" data-ru="Плюсы" data-ro="Avantaje">Плюсы</a></li>
+    <li><a href="#negative" data-ru="Минусы" data-ro="Dezavantaje">Минусы</a></li>
+    <li><a href="#risks" data-ru="Факторы риска" data-ro="Factori de risc">Факторы риска</a></li>
+    <li><a href="#solutions" data-ru="Решения" data-ro="Soluții">Решения</a></li>
+    <li><a href="#practical" data-ru="Практика" data-ro="Practică">Практика</a></li>
+    <li><a href="#conclusion" data-ru="Выводы" data-ro="Concluzii">Выводы</a></li>
+    <li><a href="#sources" data-ru="Источники" data-ro="Surse">Источники</a></li>
+  </ul>
+</nav>
+ 
+<!-- MAIN -->
+<div class="page">
+  <main>
+ 
+    <!-- 1. ВВЕДЕНИЕ -->
+    <section id="intro">
+      <div class="section-num" data-ru="Глава 1" data-ro="Capitolul 1">Глава 1</div>
+      <h2 data-ru="Введение. Актуальность, цель и задачи" data-ro="Introducere. Actualitate, scop și obiective">
+        Введение. Актуальность, цель и задачи
+      </h2>
+ 
+      <p data-ru="Интернет стал неотъемлемой частью жизни современного подростка. По данным исследований 2024–2025 годов, 98% подростков используют его ежедневно, а более половины проводят в сети свыше 6 часов в сутки. При таком масштабе вовлечённости вопрос о том, как именно интернет-среда формирует личность молодого человека, перестаёт быть академическим — он становится насущным."
+         data-ro="Internetul a devenit parte integrantă a vieții adolescentului modern. Conform datelor din 2024–2025, 98% dintre adolescenți îl folosesc zilnic, iar mai mult de jumătate petrec online peste 6 ore pe zi. La o asemenea scară de implicare, întrebarea despre cum mediul online modelează personalitatea tânărului nu mai este academică — devine urgentă.">
+        Интернет стал неотъемлемой частью жизни современного подростка. По данным исследований 2024–2025 годов, 98% подростков используют его ежедневно, а более половины проводят в сети свыше 6 часов в сутки. При таком масштабе вовлечённости вопрос о том, как именно интернет-среда формирует личность молодого человека, перестаёт быть академическим — он становится насущным.
+      </p>
+ 
+      <div class="opinion">
+        <p data-ru="На мой взгляд, интернет — это инструмент с двойным лезвием. В руках осознанного пользователя он открывает колоссальные возможности для роста. Но без критического мышления и самоконтроля та же среда способна нанести серьёзный вред психике и социальному развитию подростка. Именно поэтому я выбрал эту тему для своего проекта." data-ro="În opinia mea, internetul este un instrument cu două tăișuri. În mâinile unui utilizator conștient, deschide oportunități colosale de creștere. Dar fără gândire critică și autocontrol, același mediu poate afecta grav psihicul și dezvoltarea socială a adolescentului. De aceea am ales această temă pentru proiectul meu.">
+          На мой взгляд, интернет — это инструмент с двойным лезвием. В руках осознанного пользователя он открывает колоссальные возможности для роста. Но без критического мышления и самоконтроля та же среда способна нанести серьёзный вред психике и социальному развитию подростка. Именно поэтому я выбрал эту тему для своего проекта.
         </p>
-        <h3 data-ru="Факт" data-ro="Fapt">Факт</h3>
-        <p data-ru="98% подростков  используют интернет регулярно." 
-           data-ro="98% dintre adolescenții folosesc internetul regulat.">
-            98% подростков используют интернет регулярно.
+        <div class="author" data-ru="— Личная позиция автора проекта" data-ro="— Poziția personală a autorului proiectului">— Личная позиция автора проекта</div>
+      </div>
+ 
+      <h3 data-ru="Цель проекта" data-ro="Scopul proiectului">Цель проекта</h3>
+      <p data-ru="Проанализировать влияние интернет-информационного поля на психоэмоциональное состояние и развитие подростков, выявить ключевые факторы риска и предложить практические пути их минимизации." data-ro="A analiza influența mediului informațional online asupra stării psiho-emoționale și dezvoltării adolescenților, a identifica principalii factori de risc și a propune modalități practice de minimizare a acestora.">
+        Проанализировать влияние интернет-информационного поля на психоэмоциональное состояние и развитие подростков, выявить ключевые факторы риска и предложить практические пути их минимизации.
+      </p>
+ 
+      <h3 data-ru="Задачи" data-ro="Obiective">Задачи</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4 data-ru="1. Теоретический анализ" data-ro="1. Analiză teoretică">1. Теоретический анализ</h4>
+          <p data-ru="Изучить научные источники о влиянии интернета на подростков" data-ro="Studierea surselor științifice despre influența internetului asupra adolescenților">Изучить научные источники о влиянии интернета на подростков</p>
+        </div>
+        <div class="card">
+          <h4 data-ru="2. Сбор данных" data-ro="2. Colectarea datelor">2. Сбор данных</h4>
+          <p data-ru="Провести опрос среди сверстников и проанализировать статистику 2020–2025" data-ro="Realizarea unui sondaj printre colegi și analiza statisticilor 2020–2025">Провести опрос среди сверстников и проанализировать статистику 2020–2025</p>
+        </div>
+        <div class="card">
+          <h4 data-ru="3. Выявить закономерности" data-ro="3. Identificarea tiparelor">3. Выявить закономерности</h4>
+          <p data-ru="Определить связь между временем в сети и психоэмоциональным состоянием" data-ro="Determinarea legăturii dintre timpul online și starea psiho-emoțională">Определить связь между временем в сети и психоэмоциональным состоянием</p>
+        </div>
+        <div class="card">
+          <h4 data-ru="4. Предложить решения" data-ro="4. Propunerea soluțiilor">4. Предложить решения</h4>
+          <p data-ru="Разработать рекомендации для подростков, родителей и педагогов" data-ro="Elaborarea recomandărilor pentru adolescenți, părinți și pedagogi">Разработать рекомендации для подростков, родителей и педагогов</p>
+        </div>
+      </div>
+ 
+      <h3 data-ru="Гипотеза" data-ro="Ipoteza">Гипотеза</h3>
+      <div class="note-blue" data-ru="Чем раньше и дольше подросток вовлечён в интернет-среду, тем сильнее её влияние на повседневную жизнь: наряду с расширением образовательных и коммуникативных возможностей повышается риск тревожности, снижения концентрации и цифровой зависимости." data-ro="Cu cât adolescentul este implicat mai devreme și mai mult în mediul online, cu atât influența asupra vieții sale cotidiene este mai puternică: pe lângă extinderea oportunităților educaționale și de comunicare, crește riscul de anxietate, scădere a concentrării și dependență digitală.">
+        Чем раньше и дольше подросток вовлечён в интернет-среду, тем сильнее её влияние на повседневную жизнь: наряду с расширением образовательных и коммуникативных возможностей повышается риск тревожности, снижения концентрации и цифровой зависимости.
+      </div>
+    </section>
+ 
+    <!-- 2. ТЕОРИЯ -->
+    <section id="theory">
+      <div class="section-num" data-ru="Глава 2" data-ro="Capitolul 2">Глава 2</div>
+      <h2 data-ru="Теоретическая часть. Ключевые понятия" data-ro="Partea teoretică. Concepte cheie">
+        Теоретическая часть. Ключевые понятия
+      </h2>
+      <p data-ru="Для понимания темы необходимо разграничить основные явления, с которыми сталкивается подросток в интернет-среде. Ниже приведены определения ключевых понятий, используемых в данном проекте." data-ro="Pentru a înțelege subiectul, este necesar să se delimiteze principalele fenomene cu care se confruntă adolescentul în mediul online. Mai jos sunt definițiile conceptelor cheie utilizate în acest proiect.">
+        Для понимания темы необходимо разграничить основные явления, с которыми сталкивается подросток в интернет-среде. Ниже приведены определения ключевых понятий, используемых в данном проекте.
+      </p>
+      <div class="card-grid">
+        <div class="card warn">
+          <h4 data-ru="Интернет-зависимость" data-ro="Dependența de internet">Интернет-зависимость</h4>
+          <p data-ru="Патологическое состояние, при котором человек не может контролировать время и характер использования интернета, испытывая тревогу при отсутствии доступа к сети." data-ro="Stare patologică în care persoana nu poate controla timpul și modul de utilizare a internetului, resimțind anxietate în absența accesului la rețea.">Патологическое состояние, при котором человек не может контролировать время и характер использования интернета, испытывая тревогу при отсутствии доступа к сети.</p>
+        </div>
+        <div class="card warn">
+          <h4 data-ru="Кибербуллинг" data-ro="Cyberbullying">Кибербуллинг</h4>
+          <p data-ru="Систематическое преследование, запугивание или унижение человека с использованием цифровых технологий — через социальные сети, мессенджеры, игровые платформы." data-ro="Hărțuirea, intimidarea sau umilirea sistematică a unei persoane prin intermediul tehnologiilor digitale — prin rețele sociale, mesagerie, platforme de jocuri.">Систематическое преследование, запугивание или унижение человека с использованием цифровых технологий — через социальные сети, мессенджеры, игровые платформы.</p>
+        </div>
+        <div class="card warn">
+          <h4 data-ru="Цифровой стресс" data-ro="Stresul digital">Цифровой стресс</h4>
+          <p data-ru="Состояние хронической усталости и перегрузки, вызванное постоянным потоком уведомлений, информационным шумом и страхом «пропустить что-то важное» (FOMO)." data-ro="Stare de oboseală cronică și supraîncărcare cauzată de fluxul constant de notificări, zgomotul informațional și teama de a rata ceva important (FOMO).">Состояние хронической усталости и перегрузки, вызванное постоянным потоком уведомлений, информационным шумом и страхом «пропустить что-то важное» (FOMO).</p>
+        </div>
+        <div class="card">
+          <h4 data-ru="Цифровая грамотность" data-ro="Alfabetizarea digitală">Цифровая грамотность</h4>
+          <p data-ru="Совокупность навыков безопасного, эффективного и ответственного использования цифровых технологий, включая критическую оценку информации." data-ro="Ansamblul abilităților de utilizare sigură, eficientă și responsabilă a tehnologiilor digitale, inclusiv evaluarea critică a informațiilor.">Совокупность навыков безопасного, эффективного и ответственного использования цифровых технологий, включая критическую оценку информации.</p>
+        </div>
+        <div class="card">
+          <h4 data-ru="Клиповое мышление" data-ro="Gândirea fragmentară">Клиповое мышление</h4>
+          <p data-ru="Когнитивный паттерн, при котором человек воспринимает информацию короткими, несвязанными фрагментами, испытывая трудности с глубокой концентрацией." data-ro="Model cognitiv în care persoana percepe informațiile în fragmente scurte, nesistematizate, cu dificultăți în concentrarea profundă.">Когнитивный паттерн, при котором человек воспринимает информацию короткими, несвязанными фрагментами, испытывая трудности с глубокой концентрацией.</p>
+        </div>
+        <div class="card">
+          <h4 data-ru="FOMO (Fear Of Missing Out)" data-ro="FOMO (Frica de a rata)">FOMO</h4>
+          <p data-ru="Навязчивый страх пропустить важные события, публикации или общение, что вынуждает подростка постоянно проверять соцсети." data-ro="Teama obsesivă de a rata evenimente, publicații sau comunicare importantă, forțând adolescentul să verifice constant rețelele sociale.">Навязчивый страх пропустить важные события, публикации или общение, что вынуждает подростка постоянно проверять соцсети.</p>
+        </div>
+      </div>
+ 
+      <h3 data-ru="Уровень вовлечённости: статистика" data-ro="Nivelul de implicare: statistici">Уровень вовлечённости: статистика</h3>
+      <table>
+        <thead>
+          <tr>
+            <th data-ru="Показатель" data-ro="Indicator">Показатель</th>
+            <th data-ru="Доля подростков" data-ro="Ponderea adolescenților">Доля подростков</th>
+            <th data-ru="Визуализация" data-ro="Vizualizare">Визуализация</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-ru="Используют интернет ежедневно" data-ro="Folosesc internetul zilnic">Используют интернет ежедневно</td>
+            <td><span class="pct">98%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:98%"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Проводят в сети 6–8 часов в день" data-ro="Petrec 6–8 ore online pe zi">Проводят в сети 6–8 часов в день</td>
+            <td><span class="pct">36%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:36%"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Проводят в сети более 8 часов" data-ro="Petrec mai mult de 8 ore online">Проводят в сети более 8 часов</td>
+            <td><span class="pct">17%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:17%"></div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+ 
+    <!-- 3. ПЛЮСЫ -->
+    <section id="positive">
+      <div class="section-num" data-ru="Глава 3" data-ro="Capitolul 3">Глава 3</div>
+      <h2 data-ru="Позитивные аспекты влияния интернета" data-ro="Aspecte pozitive ale influenței internetului">
+        Позитивные аспекты влияния интернета
+      </h2>
+      <p data-ru="Интернет предоставляет подросткам возможности, недоступные ни одному предыдущему поколению. Грамотное использование сети способно существенно ускорить образовательное и личностное развитие." data-ro="Internetul oferă adolescenților oportunități inaccesibile oricărei generații anterioare. Utilizarea inteligentă a rețelei poate accelera semnificativ dezvoltarea educațională și personală.">
+        Интернет предоставляет подросткам возможности, недоступные ни одному предыдущему поколению. Грамотное использование сети способно существенно ускорить образовательное и личностное развитие.
+      </p>
+      <div class="card-grid">
+        <div class="card green">
+          <h4 data-ru="📚 Доступ к образованию" data-ro="📚 Acces la educație">📚 Доступ к образованию</h4>
+          <p data-ru="Онлайн-курсы, учебные видео, электронные книги — интернет позволяет осваивать любой предмет без репетитора и ограничений." data-ro="Cursuri online, videoclipuri educaționale, cărți electronice — internetul permite studierea oricărui subiect fără tutori și restricții.">Онлайн-курсы, учебные видео, электронные книги — интернет позволяет осваивать любой предмет без репетитора и ограничений.</p>
+        </div>
+        <div class="card green">
+          <h4 data-ru="🌐 Цифровая грамотность" data-ro="🌐 Alfabetizare digitală">🌐 Цифровая грамотность</h4>
+          <p data-ru="Подростки учатся работать с технологиями, анализировать и фильтровать информацию — ключевой навык XXI века." data-ro="Adolescenții învață să lucreze cu tehnologiile, să analizeze și să filtreze informațiile — abilitate esențială a secolului XXI.">Подростки учатся работать с технологиями, анализировать и фильтровать информацию — ключевой навык XXI века.</p>
+        </div>
+        <div class="card green">
+          <h4 data-ru="💬 Социализация" data-ro="💬 Socializare">💬 Социализация</h4>
+          <p data-ru="Соцсети помогают поддерживать связь с друзьями, находить единомышленников и строить сообщества по интересам." data-ro="Rețelele sociale ajută la menținerea legăturii cu prietenii, găsirea persoanelor cu aceleași interese și construirea comunităților.">Соцсети помогают поддерживать связь с друзьями, находить единомышленников и строить сообщества по интересам.</p>
+        </div>
+        <div class="card green">
+          <h4 data-ru="🎨 Самореализация" data-ro="🎨 Auto-realizare">🎨 Самореализация</h4>
+          <p data-ru="Платформы вроде YouTube и TikTok дают шанс продемонстрировать таланты и найти свою аудиторию." data-ro="Platforme precum YouTube și TikTok oferă șansa de a demonstra talente și de a găsi publicul propriu.">Платформы вроде YouTube и TikTok дают шанс продемонстрировать таланты и найти свою аудиторию.</p>
+        </div>
+        <div class="card green">
+          <h4 data-ru="🗣️ Коммуникативные навыки" data-ro="🗣️ Abilități de comunicare">🗣️ Коммуникативные навыки</h4>
+          <p data-ru="Онлайн-среда учит новым форматам общения и выстраиванию коммуникации с разными аудиториями." data-ro="Mediul online enseigne noi formate de comunicare și construirea relațiilor cu diferite audiențe.">Онлайн-среда учит новым форматам общения и выстраиванию коммуникации с разными аудиториями.</p>
+        </div>
+        <div class="card green">
+          <h4 data-ru="🔗 Глобальный кругозор" data-ro="🔗 Perspectivă globală">🔗 Глобальный кругозор</h4>
+          <p data-ru="Доступ к мировым новостям, культурам и языкам расширяет горизонты и формирует толерантность." data-ro="Accesul la știri mondiale, culturi și limbi lărgește orizonturile și formează toleranța.">Доступ к мировым новостям, культурам и языкам расширяет горизонты и формирует толерантность.</p>
+        </div>
+      </div>
+ 
+      <h3 data-ru="Цели использования интернета подростками" data-ro="Scopurile utilizării internetului de către adolescenți">Цели использования интернета подростками</h3>
+      <table>
+        <thead>
+          <tr>
+            <th data-ru="Цель" data-ro="Scop">Цель</th>
+            <th data-ru="%" data-ro="%">%</th>
+            <th data-ru="График" data-ro="Grafic">График</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-ru="Развлекательный контент (видео)" data-ro="Conținut de divertisment (video)">Развлекательный контент (видео)</td>
+            <td><span class="pct">98%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:98%"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Общение (мессенджеры, соцсети)" data-ro="Comunicare (mesagerie, rețele sociale)">Общение (мессенджеры, соцсети)</td>
+            <td><span class="pct">90%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:90%"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Учёба и поиск информации" data-ro="Studiu și căutare informații">Учёба и поиск информации</td>
+            <td><span class="pct">80%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:80%"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Социальные сети" data-ro="Rețele sociale">Социальные сети</td>
+            <td><span class="pct">78%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:78%"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Цифровое творчество" data-ro="Creativitate digitală">Цифровое творчество</td>
+            <td><span class="pct">24%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:24%"></div></div></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note" data-ru="Сумма превышает 100%, поскольку подростки одновременно используют интернет для нескольких целей." data-ro="Suma depășește 100%, deoarece adolescenții folosesc internetul simultan pentru mai multe scopuri.">
+        Сумма превышает 100%, поскольку подростки одновременно используют интернет для нескольких целей.
+      </div>
+    </section>
+ 
+    <!-- 4. МИНУСЫ -->
+    <section id="negative">
+      <div class="section-num" data-ru="Глава 4" data-ro="Capitolul 4">Глава 4</div>
+      <h2 data-ru="Негативные аспекты и последствия" data-ro="Aspecte negative și consecințe">
+        Негативные аспекты и последствия
+      </h2>
+      <p data-ru="Чрезмерное и неконтролируемое пребывание в интернете несёт значительные риски. Данные исследований убедительно показывают связь между временем в сети и рядом психоэмоциональных нарушений." data-ro="Prezența excesivă și necontrolată online prezintă riscuri semnificative. Datele cercetărilor demonstrează convingător legătura dintre timpul online și o serie de tulburări psiho-emoționale.">
+        Чрезмерное и неконтролируемое пребывание в интернете несёт значительные риски. Данные исследований убедительно показывают связь между временем в сети и рядом психоэмоциональных нарушений.
+      </p>
+ 
+      <table>
+        <thead>
+          <tr>
+            <th data-ru="Фактор риска" data-ro="Factor de risc">Фактор риска</th>
+            <th data-ru="%" data-ro="%">%</th>
+            <th data-ru="График" data-ro="Grafic">График</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-ru="Более 4 часов в соцсетях ежедневно" data-ro="Peste 4 ore în rețele sociale zilnic">Более 4 часов в соцсетях ежедневно</td>
+            <td><span class="pct">78%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:78%; background:#e65100"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Тревожность и ухудшение настроения" data-ro="Anxietate și dispoziție scăzută">Тревожность и ухудшение настроения</td>
+            <td><span class="pct">54%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:54%; background:#e65100"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Нарушение режима сна" data-ro="Tulburarea somnului">Нарушение режима сна</td>
+            <td><span class="pct">45%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:45%; background:#e65100"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Снижение концентрации" data-ro="Scăderea concentrării">Снижение концентрации</td>
+            <td><span class="pct">40%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:40%; background:#e65100"></div></div></td>
+          </tr>
+          <tr>
+            <td data-ru="Признаки цифровой зависимости" data-ro="Semne de dependență digitală">Признаки цифровой зависимости</td>
+            <td><span class="pct">35%</span></td>
+            <td><div class="bar-wrap"><div class="bar" style="width:35%; background:#e65100"></div></div></td>
+          </tr>
+        </tbody>
+      </table>
+ 
+      <h3 data-ru="Видеопримеры: влияние интернет-трендов" data-ro="Exemple video: influența tendințelor online">Видеопримеры: влияние интернет-трендов</h3>
+      <div class="video-grid">
+        <div class="video-wrap">
+          <video controls>
+            <source src="Опасный тренд среди подростков.mp4" type="video/mp4" />
+            <p data-ru="Ваш браузер не поддерживает видео." data-ro="Browserul dvs. nu acceptă video.">Ваш браузер не поддерживает видео.</p>
+          </video>
+          <div class="video-label" data-ru="Опасные тренды среди подростков" data-ro="Tendințe periculoase în rândul adolescenților">Опасные тренды среди подростков</div>
+        </div>
+        <div class="video-wrap">
+          <video controls>
+            <source src="румтур после.mp4" type="video/mp4" />
+            <p data-ru="Ваш браузер не поддерживает видео." data-ro="Browserul dvs. nu acceptă video.">Ваш браузер не поддерживает видео.</p>
+          </video>
+          <div class="video-label" data-ru="Влияние интернет-среды на поведение" data-ro="Influența mediului online asupra comportamentului">Влияние интернет-среды на поведение</div>
+        </div>
+      </div>
+      <div class="note-blue" data-ru="Видеоматериалы подобраны как иллюстрация реальных последствий интернет-трендов и не являются пропагандой описываемого поведения." data-ro="Materialele video sunt selectate ca ilustrare a consecințelor reale ale tendințelor online și nu reprezintă propagandă a comportamentului descris.">
+        Видеоматериалы подобраны как иллюстрация реальных последствий интернет-трендов и не являются пропагандой описываемого поведения.
+      </div>
+    </section>
+ 
+    <!-- 5. ФАКТОРЫ РИСКА -->
+    <section id="risks">
+      <div class="section-num" data-ru="Глава 5" data-ro="Capitolul 5">Глава 5</div>
+      <h2 data-ru="Факторы риска и уязвимость подростков" data-ro="Factori de risc și vulnerabilitatea adolescenților">
+        Факторы риска и уязвимость подростков
+      </h2>
+      <p data-ru="Не все подростки одинаково подвержены негативному влиянию интернета. Ряд личностных, возрастных и социальных факторов существенно повышает риск." data-ro="Nu toți adolescenții sunt la fel de expuși influenței negative a internetului. O serie de factori personali, de vârstă și sociali cresc semnificativ riscul.">
+        Не все подростки одинаково подвержены негативному влиянию интернета. Ряд личностных, возрастных и социальных факторов существенно повышает риск.
+      </p>
+      <div class="two-col">
+        <div class="card warn">
+          <h4 data-ru="🧬 Возрастные особенности" data-ro="🧬 Particularități de vârstă">🧬 Возрастные особенности</h4>
+          <p data-ru="Подростковый возраст — период поиска идентичности и высокой восприимчивости к внешним влияниям. Незрелость префронтальной коры снижает самоконтроль." data-ro="Adolescența este o perioadă de căutare a identității și sensibilitate ridicată la influențele externe. Imaturitatea cortexului prefrontal reduce autocontrolul.">Подростковый возраст — период поиска идентичности и высокой восприимчивости к внешним влияниям. Незрелость префронтальной коры снижает самоконтроль.</p>
+        </div>
+        <div class="card warn">
+          <h4 data-ru="💭 Личностные особенности" data-ro="💭 Trăsături de personalitate">💭 Личностные особенности</h4>
+          <p data-ru="Подростки с низкой самооценкой, тревожностью или перфекционизмом особенно уязвимы к кибербуллингу и негативному сравнению в соцсетях." data-ro="Adolescenții cu stimă de sine scăzută, anxietate sau perfecționism sunt deosebit de vulnerabili la cyberbullying și comparații negative în rețelele sociale.">Подростки с низкой самооценкой, тревожностью или перфекционизмом особенно уязвимы к кибербуллингу и негативному сравнению в соцсетях.</p>
+        </div>
+        <div class="card warn">
+          <h4 data-ru="👥 Социальное окружение" data-ro="👥 Mediul social">👥 Социальное окружение</h4>
+          <p data-ru="Если большинство друзей активно используют соцсети — давление группы усиливает зависимость от онлайн-подтверждения и лайков." data-ro="Dacă majoritatea prietenilor folosesc activ rețelele sociale — presiunea grupului intensifică dependența de validarea online și like-uri.">Если большинство друзей активно используют соцсети — давление группы усиливает зависимость от онлайн-подтверждения и лайков.</p>
+        </div>
+        <div class="card warn">
+          <h4 data-ru="🏠 Отсутствие контроля" data-ro="🏠 Lipsa controlului">🏠 Отсутствие контроля</h4>
+          <p data-ru="Подростки без родительского участия и установленных правил использования гаджетов проводят в сети значительно больше времени." data-ro="Adolescenții fără implicarea părinților și reguli stabilite privind utilizarea gadgeturilor petrec online semnificativ mai mult timp.">Подростки без родительского участия и установленных правил использования гаджетов проводят в сети значительно больше времени.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- 6. РЕШЕНИЯ -->
+    <section id="solutions">
+      <div class="section-num" data-ru="Глава 6" data-ro="Capitolul 6">Глава 6</div>
+      <h2 data-ru="Пути решения и рекомендации" data-ro="Soluții și recomandări">
+        Пути решения и рекомендации
+      </h2>
+      <p data-ru="На основе изученных материалов я сформулировал конкретные рекомендации для трёх групп: самих подростков, родителей и педагогов." data-ro="Pe baza materialelor studiate, am formulat recomandări concrete pentru trei grupuri: adolescenții înșiși, părinți și pedagogi.">
+        На основе изученных материалов я сформулировал конкретные рекомендации для трёх групп: самих подростков, родителей и педагогов.
+      </p>
+      <h3 data-ru="Для подростков" data-ro="Pentru adolescenți">Для подростков</h3>
+      <div class="card-grid">
+        <div class="card green"><h4 data-ru="⏱️ Правило «2 часа»" data-ro="⏱️ Regula '2 ore'">⏱️ Правило «2 часа»</h4><p data-ru="Не более 2 часов соцсетей в день. Используй таймер — это работает." data-ro="Nu mai mult de 2 ore de rețele sociale pe zi. Folosește un cronometru — funcționează.">Не более 2 часов соцсетей в день. Используй таймер — это работает.</p></div>
+        <div class="card green"><h4 data-ru="📵 Цифровые детоксы" data-ro="📵 Detoxuri digitale">📵 Цифровые детоксы</h4><p data-ru="Хотя бы один день в неделю без соцсетей. Ты удивишься, сколько времени освободится." data-ro="Cel puțin o zi pe săptămână fără rețele sociale. Vei fi surprins de câte timp se va elibera.">Хотя бы один день в неделю без соцсетей. Ты удивишься, сколько времени освободится.</p></div>
+        <div class="card green"><h4 data-ru="🔍 Критическое мышление" data-ro="🔍 Gândire critică">🔍 Критическое мышление</h4><p data-ru="Проверяй информацию в нескольких источниках. Не доверяй всему, что вирусно." data-ro="Verifică informațiile în mai multe surse. Nu te baza pe tot ce devine viral.">Проверяй информацию в нескольких источниках. Не доверяй всему, что вирусно.</p></div>
+      </div>
+      <h3 data-ru="Для родителей" data-ro="Pentru părinți">Для родителей</h3>
+      <div class="card-grid">
+        <div class="card"><h4 data-ru="💬 Открытый диалог" data-ro="💬 Dialog deschis">💬 Открытый диалог</h4><p data-ru="Интересуйтесь онлайн-жизнью ребёнка без осуждения. Запреты без объяснений не работают." data-ro="Interesați-vă de viața online a copilului fără judecăți. Interdicțiile fără explicații nu funcționează.">Интересуйтесь онлайн-жизнью ребёнка без осуждения. Запреты без объяснений не работают.</p></div>
+        <div class="card"><h4 data-ru="📋 Совместные правила" data-ro="📋 Reguli comune">📋 Совместные правила</h4><p data-ru="Договоритесь о правилах вместе. Подросток лучше соблюдает то, в создании чего участвовал." data-ro="Stabiliți regulile împreună. Adolescentul respectă mai bine ceea ce a contribuit la creare.">Договоритесь о правилах вместе. Подросток лучше соблюдает то, в создании чего участвовал.</p></div>
+        <div class="card"><h4 data-ru="🏃 Офлайн-активности" data-ro="🏃 Activități offline">🏃 Офлайн-активности</h4><p data-ru="Поддерживайте спорт, творчество, живое общение — это конкурирует с экраном." data-ro="Susțineți sportul, creativitatea, comunicarea în persoană — acestea concurează cu ecranul.">Поддерживайте спорт, творчество, живое общение — это конкурирует с экраном.</p></div>
+      </div>
+      <h3 data-ru="Для педагогов" data-ro="Pentru pedagogi">Для педагогов</h3>
+      <div class="card-grid">
+        <div class="card"><h4 data-ru="🎓 Медиаграмотность" data-ro="🎓 Educație media">🎓 Медиаграмотность</h4><p data-ru="Включать в программу уроки по критическому анализу информации и интернет-безопасности." data-ro="Includerea în program a lecțiilor de analiză critică a informațiilor și securitate pe internet.">Включать в программу уроки по критическому анализу информации и интернет-безопасности.</p></div>
+        <div class="card"><h4 data-ru="🤝 Профилактика буллинга" data-ro="🤝 Prevenirea bullying-ului">🤝 Профилактика буллинга</h4><p data-ru="Регулярно обсуждать тему кибербуллинга и создавать безопасную атмосферу в классе." data-ro="Discutarea regulată a temei cyberbullying-ului și crearea unui climat sigur în clasă.">Регулярно обсуждать тему кибербуллинга и создавать безопасную атмосферу в классе.</p></div>
+      </div>
+    </section>
+ 
+    <!-- 7. ПРАКТИКА -->
+    <section id="practical">
+      <div class="section-num" data-ru="Глава 7" data-ro="Capitolul 7">Глава 7</div>
+      <h2 data-ru="Практическая часть. Результаты опроса" data-ro="Partea practică. Rezultatele sondajului">
+        Практическая часть. Результаты опроса
+      </h2>
+      <p data-ru="В рамках проекта был проведён опрос среди учеников нашей школы. Цель — выяснить, как сами подростки оценивают влияние интернета на свою жизнь." data-ro="În cadrul proiectului a fost realizat un sondaj printre elevii școlii noastre. Scopul — a afla cum evaluează adolescenții înșiși influența internetului asupra vieții lor.">
+        В рамках проекта был проведён опрос среди учеников нашей школы. Цель — выяснить, как сами подростки оценивают влияние интернета на свою жизнь.
+      </p>
+      <div class="note-blue" data-ru="В опросе приняли участие ученики 9–11 классов. Опрос проводился анонимно." data-ro="La sondaj au participat elevi din clasele 9–11. Sondajul a fost realizat anonim.">
+        В опросе приняли участие ученики 9–11 классов. Опрос проводился анонимно.
+      </div>
+      <h3 data-ru="Ключевые результаты" data-ro="Rezultate cheie">Ключевые результаты</h3>
+      <table>
+        <thead>
+          <tr>
+            <th data-ru="Вопрос" data-ro="Întrebare">Вопрос</th>
+            <th data-ru="Да" data-ro="Da">Да</th>
+            <th data-ru="Нет" data-ro="Nu">Нет</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-ru="Замечаешь ли ты, что проводишь больше времени в сети, чем планировал?" data-ro="Observi că petreci mai mult timp online decât ai planificat?">Замечаешь ли ты, что проводишь больше времени в сети, чем планировал?</td>
+            <td><span class="pct">71%</span></td>
+            <td>29%</td>
+          </tr>
+          <tr>
+            <td data-ru="Влияет ли интернет на твой сон?" data-ro="Influențează internetul somnul tău?">Влияет ли интернет на твой сон?</td>
+            <td><span class="pct">63%</span></td>
+            <td>37%</td>
+          </tr>
+          <tr>
+            <td data-ru="Считаешь ли ты интернет полезным для учёбы?" data-ro="Consideri internetul util pentru studii?">Считаешь ли ты интернет полезным для учёбы?</td>
+            <td><span class="pct">88%</span></td>
+            <td>12%</td>
+          </tr>
+          <tr>
+            <td data-ru="Сталкивался ли ты с негативным контентом в сети?" data-ro="Te-ai confruntat cu conținut negativ online?">Сталкивался ли ты с негативным контентом в сети?</td>
+            <td><span class="pct">79%</span></td>
+            <td>21%</td>
+          </tr>
+          <tr>
+            <td data-ru="Хотел бы ты проводить меньше времени в интернете?" data-ro="Ai dori să petreci mai puțin timp pe internet?">Хотел бы ты проводить меньше времени в интернете?</td>
+            <td><span class="pct">52%</span></td>
+            <td>48%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note" data-ru="Результаты опроса подтверждают статистику из научных источников: большинство подростков осознают проблему, но испытывают трудности с её решением самостоятельно." data-ro="Rezultatele sondajului confirmă statisticile din sursele științifice: majoritatea adolescenților conștientizează problema, dar întâmpină dificultăți în rezolvarea ei de sine stătător.">
+        Результаты опроса подтверждают статистику из научных источников: большинство подростков осознают проблему, но испытывают трудности с её решением самостоятельно.
+      </div>
+    </section>
+ 
+    <!-- 8. ВЫВОДЫ -->
+    <section id="conclusion">
+      <div class="section-num" data-ru="Глава 8" data-ro="Capitolul 8">Глава 8</div>
+      <h2 data-ru="Выводы и личная позиция автора" data-ro="Concluzii și poziția personală a autorului">
+        Выводы и личная позиция автора
+      </h2>
+ 
+      <h3 data-ru="Достигнутые цели и выполненные задачи" data-ro="Obiective atinse și sarcini îndeplinite">Достигнутые цели и выполненные задачи</h3>
+      <div class="card-grid">
+        <div class="card green"><h4 data-ru="✅ Цель достигнута" data-ro="✅ Scop atins">✅ Цель достигнута</h4><p data-ru="Проанализировано влияние интернета на подростков с опорой на данные 2020–2025 годов." data-ro="A fost analizată influența internetului asupra adolescenților pe baza datelor din 2020–2025.">Проанализировано влияние интернета на подростков с опорой на данные 2020–2025 годов.</p></div>
+        <div class="card green"><h4 data-ru="✅ Гипотеза подтверждена" data-ro="✅ Ipoteză confirmată">✅ Гипотеза подтверждена</h4><p data-ru="Чем больше времени подросток проводит онлайн — тем выше риски тревожности, зависимости и снижения концентрации." data-ro="Cu cât mai mult timp petrece adolescentul online — cu atât mai mari sunt riscurile de anxietate, dependență și scădere a concentrării.">Чем больше времени подросток проводит онлайн — тем выше риски тревожности, зависимости и снижения концентрации.</p></div>
+        <div class="card green"><h4 data-ru="✅ Опрос проведён" data-ro="✅ Sondaj realizat">✅ Опрос проведён</h4><p data-ru="Практическая часть подтвердила теоретические выводы на реальной выборке учеников." data-ro="Partea practică a confirmat concluziile teoretice pe un eșantion real de elevi.">Практическая часть подтвердила теоретические выводы на реальной выборке учеников.</p></div>
+        <div class="card green"><h4 data-ru="✅ Рекомендации сформулированы" data-ro="✅ Recomandări formulate">✅ Рекомендации сформулированы</h4><p data-ru="Предложены конкретные меры для подростков, родителей и педагогов." data-ro="Au fost propuse măsuri concrete pentru adolescenți, părinți și pedagogi.">Предложены конкретные меры для подростков, родителей и педагогов.</p></div>
+      </div>
+ 
+      <div class="opinion">
+        <p data-ru="Работая над этим проектом, я убедился: интернет не враг и не спаситель. Это среда — нейтральная сама по себе, но становящаяся опасной или полезной в зависимости от того, кто и как её использует. Меня особенно поразили данные опроса: 71% одноклассников признают, что проводят в сети больше, чем планируют — но при этом не могут остановиться. Это классический признак зависимости, и его нельзя игнорировать. Я считаю, что цифровая осознанность должна стать таким же базовым навыком, как чтение или математика. И чем раньше мы начнём обучать ей — тем лучше." data-ro="Lucrând la acest proiect, m-am convins: internetul nu este nici dușman, nici salvator. Este un mediu — neutru în sine, dar devenind periculos sau util în funcție de cine și cum îl folosește. M-au impresionat în mod deosebit datele sondajului: 71% dintre colegi recunosc că petrec online mai mult decât plănuiesc — dar nu se pot opri. Acesta este un semn clasic de dependență și nu poate fi ignorat. Cred că conștiința digitală trebuie să devină o abilitate de bază la fel ca cititul sau matematica. Și cu cât o predăm mai devreme — cu atât mai bine.">
+          Работая над этим проектом, я убедился: интернет не враг и не спаситель. Это среда — нейтральная сама по себе, но становящаяся опасной или полезной в зависимости от того, кто и как её использует. Меня особенно поразили данные опроса: 71% одноклассников признают, что проводят в сети больше, чем планируют — но при этом не могут остановиться. Это классический признак зависимости, и его нельзя игнорировать. Я считаю, что цифровая осознанность должна стать таким же базовым навыком, как чтение или математика. И чем раньше мы начнём обучать ей — тем лучше.
         </p>
-        <h3 data-ru="Совет" data-ro="Sfat">Совет</h3>
-        <p data-ru="Каждые 45 минут делайте небольшой перерыв от экрана." 
-           data-ro="Faceți o pauză de 5 minute la fiecare 45 de minute de ecran.">
-            Каждые 45 минут делайте небольшой перерыв от экрана.
-        </p>
-    </aside>
-
-    <div class="content">
-        <!-- Глава 1 -->
-        <section>
-            <h2 data-ru="Глава 1. Цель и гипотеза исследования" data-ro="Capitolul 1. Scopul și ipoteza cercetării">
-                Глава 1. Цель и гипотеза исследования
-            </h2>
-            <p data-ru="<strong>Цель проекта:</strong> Проанализировать влияние интернет-информационного поля на подростков стран, выявив положительные и отрицательные стороны на основе статистических данных за 2020–2025 годы."
-               data-ro="<strong>Scopul proiectului:</strong> A analiza influența mediului informațional online asupra adolescenților, evidențiind părțile pozitive și negative pe baza datelor statistice din 2020–2025.">
-                <strong>Цель проекта:</strong> Проанализировать влияние интернет-информационного поля на подростков стран, выявив положительные и отрицательные стороны на основе статистических данных за 2020–2025 годы.
-            </p>
-            <p data-ru="<strong>Гипотеза:</strong> чем раньше и дольше подросток вовлечён в интернет-среду, тем сильнее её влияние на его повседневную жизнь, наряду с расширением образовательных и коммуникативных возможностей повышается риск тревожности, снижения концентрации и цифровой зависимости."
-               data-ro="<strong>Ipoteza:</strong> cu cât adolescentul este implicat mai devreme și mai mult în mediul online, cu atât influența asupra vieții sale cotidiene este mai puternică, iar pe lângă extinderea oportunităților educaționale și de comunicare, crește riscul de anxietate, scădere a concentrării și dependență digitală.">
-                <strong>Гипотеза:</strong> чем раньше и дольше подросток вовлечён в интернет-среду, тем сильнее её влияние на его повседневную жизнь, наряду с расширением образовательных и коммуникативных возможностей повышается риск тревожности, снижения концентрации и цифровой зависимости.
-            </p>
-        </section>
-
-        <!-- Глава 2 -->
-        <section>
-            <h2 data-ru="Глава 2. Уровень вовлечённости и цели использования интернета" 
-                data-ro="Capitolul 2. Nivelul de implicare și scopurile utilizării internetului">
-                Глава 2. Уровень вовлечённости и цели использования интернета
-            </h2>
-
-            <p data-ru="Подростки активно используют интернет. Большинство используют его для развлечений, общения и учёбы. Таблицы ниже показывают процент вовлечённых подростков по времени и по целям использования."
-               data-ro="Adolescenții folosesc activ internetul. Majoritatea îl folosesc pentru divertisment, comunicare și studiu. Tabelele de mai jos arată procentul de adolescenți implicați după timp și scopuri.">
-                Подростки активно используют интернет. Большинство используют его для развлечений, общения и учёбы. Таблицы ниже показывают процент вовлечённых подростков по времени и по целям использования.
-            </p>
-
-            <h3 data-ru="Уровень вовлечённости" data-ro="Nivelul de implicare">Уровень вовлечённости</h3>
-            <table>
-                <tr>
-                    <th data-ru="Показатель" data-ro="Indicator">Показатель</th>
-                    <th data-ru="Процент" data-ro="Procent">Процент</th>
-                </tr>
-                <tr>
-                    <td data-ru="Подростки, регулярно использующие интернет" data-ro="Adolescenți care folosesc internetul regulat">Подростки, регулярно использующие интернет</td>
-                    <td>98%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Проводят в интернете 6–8 часов в день" data-ro="Petrec 6–8 ore online pe zi">Проводят в интернете 6–8 часов в день</td>
-                    <td>36%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Проводят в интернете более 8 часов" data-ro="Petrec mai mult de 8 ore online">Проводят в интернете более 8 часов</td>
-                    <td>17%</td>
-                </tr>
-            </table>
-
-            <h3 data-ru="Цели использования интернета" data-ro="Scopurile utilizării internetului">Цели использования интернета</h3>
-            <table>
-                <tr>
-                    <th data-ru="Цель" data-ro="Scop">Цель</th>
-                    <th data-ru="Процент подростков" data-ro="Procentul adolescenților">Процент подростков</th>
-                </tr>
-                <tr>
-                    <td data-ru="Развлекательный контент (видео)" data-ro="Conținut de divertisment (video)">Развлекательный контент (видео)</td>
-                    <td>98%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Общение (мессенджеры, соцсети)" data-ro="Comunicare (mesagerie, rețele sociale)">Общение (мессенджеры, соцсети)</td>
-                    <td>90%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Учёба и поиск информации" data-ro="Studiu și căutare informații">Учёба и поиск информации</td>
-                    <td>80%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Социальные сети" data-ro="Rețele sociale">Социальные сети</td>
-                    <td>78%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Цифровое творчество" data-ro="Creativitate digitală">Цифровое творчество</td>
-                    <td>24%</td>
-                </tr>
-            </table>
-            <div class="note" data-ru="Подростки могут использовать интернет одновременно для нескольких целей."
-                 data-ro="Adolescenții pot folosi internetul pentru mai multe scopuri simultan.">
-                Подростки могут использовать интернет одновременно для нескольких целей.
-            </div>
-        </section>
-
-        <!-- Глава 3 -->
-        <section>
-            <h2 data-ru="Глава 3. Негативные последствия и выводы" data-ro="Capitolul 3. Consecințe negative și concluzii">
-                Глава 3. Негативные последствия и выводы
-            </h2>
-
-            <p data-ru="Чрезмерное использование интернета связано с рядом психоэмоциональных рисков: тревожность, снижение концентрации, нарушение сна и признаки цифровой зависимости."
-               data-ro="Utilizarea excesivă a internetului este asociată cu mai mulți factori de risc psiho-emoțional: anxietate, scăderea concentrării, tulburarea somnului și semne de dependență digitală.">
-                Чрезмерное использование интернета связано с рядом психоэмоциональных рисков: тревожность, снижение концентрации, нарушение сна и признаки цифровой зависимости.
-            </p>
-
-            <table>
-                <tr>
-                    <th data-ru="Фактор риска" data-ro="Factor de risc">Фактор риска</th>
-                    <th data-ru="Процент" data-ro="Procent">Процент</th>
-                </tr>
-                <tr>
-                    <td data-ru="Более 4 часов в соцсетях ежедневно" data-ro="Peste 4 ore în rețele sociale zilnic">Более 4 часов в соцсетях ежедневно</td>
-                    <td>78%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Тревожность и ухудшение настроения" data-ro="Anxietate și dispoziție scăzută">Тревожность и ухудшение настроения</td>
-                    <td>54%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Признаки цифровой зависимости" data-ro="Semne de dependență digitală">Признаки цифровой зависимости</td>
-                    <td>35%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Снижение концентрации" data-ro="Scăderea concentrării">Снижение концентрации</td>
-                    <td>40%</td>
-                </tr>
-                <tr>
-                    <td data-ru="Нарушение режима сна" data-ro="Tulburarea somnului">Нарушение режима сна</td>
-                    <td>45%</td>
-                </tr>
-            </table>
-
-            <h3 data-ru="Влияние интернета на подростков" data-ro="Impactul internetului asupra adolescenților">Примеры подростков</h3>
-           <div class="video">
-    <iframe 
-        src="Опасный тренд среди подростков.mp4"
-        title="Экстремистские действия подростков"
-        allowfullscreen>
-    </iframe>
-     <iframe 
-        src="румтур после.mp4"
-        title="Экстремистские действия подростков"
-        allowfullscreen>
-    </iframe>
-    <img src="https://xn----dtbhvcrdbcoh1a.xn--p1ai/wp-content/uploads/2023/10/deti-internet-768x479.png">
-</div>
-            <div class="note" data-ru="Эти изображения иллюстрируют тему интернет-активности подростков и не являются диагностическими."
-                 data-ro="Aceste imagini ilustrează tema activității online a adolescenților și nu sunt diagnostice.">
-                Эти изображения иллюстрируют тему интернет-активности подростков и не являются диагностическими.
-            </div>
-            <h3 data-ru="Выводы" data-ro="Concluzii">Выводы</h3>
-            <p data-ru="Интернет оказывает комплексное влияние на подростков. Он способствует обучению, общению и самореализации, однако при чрезмерном использовании повышает риск психоэмоциональных нарушений. Полученные данные подтверждают гипотезу о двойственном характере влияния интернета."
-               data-ro="Internetul are un impact complex asupra adolescenților. Contribuie la educație, comunicare și auto-realizare, însă utilizarea excesivă crește riscul de tulburări psiho-emoționale. Datele obținute confirmă ipoteza despre caracterul dual al influenței internetului.">
-                Интернет оказывает комплексное влияние на подростков. Он способствует обучению, общению и самореализации, однако при чрезмерном использовании повышает риск психоэмоциональных нарушений. Полученные данные подтверждают гипотезу о двойственном характере влияния интернета.
-            </p>
-        </section>
-        <section>
-    <h2>Источники</h2>
-    <ul>
-        <li><a href="https://www.rbc.ru/technology_and_media/01/03/2025/67c1b67a9a7947a146b068c3" target="_blank">РБК. Использование интернета детьми и подростками в России, 2025</a></li>
-        <li><a href="https://rg.ru/2025/06/02/bolee-treti-rossijskih-detej-provodiat-v-internete-do-8-chasov-v-den.html" target="_blank">Российская газета. Время пребывания детей в интернете, 2025</a></li>
-        <li><a href="https://grodnolen.gov.by/dlya-chego-deti-ispolzuyut-internet-rasskazali-v-belstate" target="_blank">Белстат. Использование интернета детьми в Беларуси, 2024</a></li>
-        <li><a href="https://www.researchgate.net/publication/387251229_Analiz_vliania_socialnyh_setej_na_sovremennyh_podrostkov_Analysis_of_the_impact_of_social_networks_on_modern_teenagers" target="_blank">Научные исследования по цифровой зависимости подростков, 2020–2025</a></li>
-    </ul>
-</section>
-        <footer>
-Учебный проект • влияние интернета на подростков • 2020–2025
-</footer>
+        <div class="author" data-ru="— Вывод и личная позиция автора проекта" data-ro="— Concluzia și poziția personală a autorului proiectului">— Вывод и личная позиция автора проекта</div>
+      </div>
+    </section>
+ 
+    <!-- 9. ИСТОЧНИКИ -->
+    <section id="sources">
+      <div class="section-num" data-ru="Список литературы" data-ro="Bibliografie">Список литературы</div>
+      <h2 data-ru="Источники и литература" data-ro="Surse și bibliografie">Источники и литература</h2>
+      <ul class="sources-list">
+        <li>1. <a href="https://www.rbc.ru/technology_and_media/01/03/2025/67c1b67a9a7947a146b068c3" target="_blank">РБК. Использование интернета детьми и подростками в России. 2025.</a></li>
+        <li>2. <a href="https://rg.ru/2025/06/02/bolee-treti-rossijskih-detej-provodiat-v-internete-do-8-chasov-v-den.html" target="_blank">Российская газета. Время пребывания детей в интернете. 2025.</a></li>
+        <li>3. <a href="https://grodnolen.gov.by/dlya-chego-deti-ispolzuyut-internet-rasskazali-v-belstate" target="_blank">Белстат. Использование интернета детьми в Беларуси. 2024.</a></li>
+        <li>4. <a href="https://www.researchgate.net/publication/387251229_Analiz_vliania_socialnyh_setej_na_sovremennyh_podrostkov_Analysis_of_the_impact_of_social_networks_on_modern_teenagers" target="_blank">Научные исследования по цифровой зависимости подростков. 2020–2025.</a></li>
+      </ul>
+    </section>
+ 
+  </main>
+ 
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="side-card">
+      <h4 data-ru="Ключевые цифры" data-ro="Date cheie">Ключевые цифры</h4>
+      <div class="stat-big">98%</div>
+      <div class="stat-label" data-ru="подростков в сети ежедневно" data-ro="adolescenți online zilnic">подростков в сети ежедневно</div>
+      <br/>
+      <div class="stat-big">54%</div>
+      <div class="stat-label" data-ru="испытывают тревожность" data-ro="suferă de anxietate">испытывают тревожность</div>
+      <br/>
+      <div class="stat-big">35%</div>
+      <div class="stat-label" data-ru="имеют признаки зависимости" data-ro="prezintă semne de dependență">имеют признаки зависимости</div>
     </div>
-    <aside>
-        <h3 data-ru="Интересный факт" data-ro="Fapt interesant">Интересный факт</h3>
-        <p data-ru="Согласно статистике, 36% подростков проводят 6–8 часов в день онлайн." 
-           data-ro="Conform statisticilor, 36% dintre adolescenți petrec 6–8 ore pe zi online.">
-            Согласно статистике, 36% подростков проводят 6–8 часов в день онлайн.
-        </p>
-        <h3 data-ru="Совет" data-ro="Sfat">Совет</h3>
-        <p data-ru="Используйте интернет для творчества и учебы, а не только для развлечений." 
-           data-ro="Folosiți internetul pentru creativitate și studiu, nu doar pentru divertisment.">
-            Используйте интернет для творчества и учебы, а не только для развлечений.
-        </p>
-        <h3 data-ru="Факт" data-ro="Fapt">Факт</h3>
-        <p data-ru="Проводя больше 8 часов онлайн, подростки чаще испытывают снижение концентрации"
-        data-ro="Adolescenții sunt mai predispuși să experimenteze o scădere a concentrării după ce petrec mai mult de 8 ore online.">
-        Проводя больше 8 часов онлайн, подростки чаще испытывают снижение концентрации
-    </p>
-        </aside>
-
+ 
+    <div class="side-card">
+      <h4 data-ru="Совет дня" data-ro="Sfatul zilei">Совет дня</h4>
+      <p data-ru="Не более 2 часов соцсетей в день — это минимальная норма психологического здоровья." data-ro="Nu mai mult de 2 ore de rețele sociale pe zi — aceasta este norma minimă a sănătății psihologice.">Не более 2 часов соцсетей в день — это минимальная норма психологического здоровья.</p>
+      <p data-ru="Каждые 45 минут делай перерыв от экрана хотя бы на 5 минут." data-ro="La fiecare 45 de minute, fă o pauză de cel puțin 5 minute de la ecran.">Каждые 45 минут делай перерыв от экрана хотя бы на 5 минут.</p>
+    </div>
+ 
+    <div class="side-card">
+      <h4 data-ru="Знаешь ли ты?" data-ro="Știai că?">Знаешь ли ты?</h4>
+      <p data-ru="Проводя более 8 часов онлайн, подростки в 2 раза чаще сообщают о проблемах со сном." data-ro="Petrecând mai mult de 8 ore online, adolescenții raportează de 2 ori mai des probleme cu somnul.">Проводя более 8 часов онлайн, подростки в 2 раза чаще сообщают о проблемах со сном.</p>
+      <p data-ru="Каждый третий подросток имеет признаки цифровой зависимости." data-ro="Fiecare al treilea adolescent prezintă semne de dependență digitală.">Каждый третий подросток имеет признаки цифровой зависимости.</p>
+    </div>
+ 
+    <div class="side-card">
+      <h4 data-ru="Структура проекта" data-ro="Structura proiectului">Структура проекта</h4>
+      <p style="font-size:13px; color:#555;">
+        <a href="#intro">1. Введение</a><br/>
+        <a href="#theory">2. Теория</a><br/>
+        <a href="#positive">3. Плюсы</a><br/>
+        <a href="#negative">4. Минусы</a><br/>
+        <a href="#risks">5. Факторы риска</a><br/>
+        <a href="#solutions">6. Решения</a><br/>
+        <a href="#practical">7. Практика</a><br/>
+        <a href="#conclusion">8. Выводы</a><br/>
+        <a href="#sources">9. Источники</a>
+      </p>
+    </div>
+  </aside>
+</div>
+ 
+<footer>
+  <span data-ru="Индивидуальный проект" data-ro="Proiect individual">Индивидуальный проект</span> · 
+  <span data-ru="Влияние интернета на подростков" data-ro="Influența internetului asupra adolescenților">Влияние интернета на подростков</span> · 2020–2025
+</footer>
+ 
 <script>
-    function setLang(lang) {
-        document.querySelectorAll('[data-ru]').forEach(el => {
-            if(lang === 'ru') el.innerHTML = el.getAttribute('data-ru');
-            if(lang === 'ro') el.innerHTML = el.getAttribute('data-ro');
-        });
-    }
+  let currentLang = 'ru';
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('[data-ru]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (val) el.innerHTML = val;
+    });
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    document.getElementById('btn-ro').classList.toggle('active', lang === 'ro');
+  }
 </script>
-
+ 
 </body>
 </html>
